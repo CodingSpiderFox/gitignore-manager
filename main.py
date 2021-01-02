@@ -1,6 +1,6 @@
-import gitignore_template_fetcher, gitignore_selector, gitignore_writer
+import gitignoretemplatefetcher, gitignoreselector, gitignorewriter
 
 if __name__ == '__main__':
-    repo_dir: str = gitignore_template_fetcher.gitignore_template_fetcher.clone_repo()
-    answers = gitignore_selector.gitignore_selector.select_filenames(repo_dir)
-    gitignore_writer.gitignore_writer.write_result("~/.global_gitignore")
+    repo_dir: str = gitignoretemplatefetcher.GitignoreTemplateFetcher.clone_repo()
+    source_file_names = gitignoreselector.GitignoreSelector.select_filenames(repo_dir)
+    gitignorewriter.GitignoreWriter.write_result("~/.global_gitignore_test", source_file_names, repo_dir)
