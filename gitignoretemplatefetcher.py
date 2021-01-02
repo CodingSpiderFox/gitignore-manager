@@ -8,7 +8,7 @@ class GitignoreTemplateFetcher:
 
     @staticmethod
     def clone_repo():
-        repo_dir : str = "./gitginore-templates"
+        repo_dir : str = "./gitignore-templates"
 
         if not os.path.exists(repo_dir):
             Repo.clone_from("https://github.com/github/gitignore", repo_dir)
